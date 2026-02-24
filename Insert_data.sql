@@ -1,8 +1,11 @@
+/* Liste des restaurants */
 INSERT INTO Restaurants (Name, Planet, Opening_year) VALUES
 ('Milky Way', 'Terre', 2401),
 ('Andromeda', 'Mars', 2407),
 ('NebulaGalaxy', 'Saturne', 2382),
 ('Centaurus', 'Venus', 2407);
+
+/* Liste des employés */
 
 INSERT INTO Employees (Firstname, Lastname, Role, IdRestaurant, hire_date) VALUES
 ('Mina', 'Crayon', 'Chef cuisinier', 1, '2480-05-01'),
@@ -24,6 +27,7 @@ INSERT INTO Employees (Firstname, Lastname, Role, IdRestaurant, hire_date) VALUE
 ('Bal', 'Tringue', 'Serveur', 4, NULL),
 ('Ilé', 'Mort', 'Manager', 4, NULL),
 
+/* Liste des plats */
 INSERT INTO Dishes (Name, Price, Category, is_vegan) VALUES
 ('Burger Astéroïde', 12.50, 'Burgers', FALSE),
 ('Pizza Antimatière', 15.00, 'Pizzas', NULL),
