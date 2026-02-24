@@ -1,9 +1,13 @@
+/* Création table restaurants */
+
 CREATE TABLE Restaurants (
     IdRestaurant INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
     Planet VARCHAR(100) NOT NULL,
     Opening_year INT
 );
+
+/* Création table employees */
 
 CREATE TABLE Employees (
     IdEmployees INT PRIMARY KEY AUTO_INCREMENT,
@@ -14,12 +18,16 @@ CREATE TABLE Employees (
     FOREIGN KEY (IdRestaurant) REFERENCES Restaurants(IdRestaurant)
 );
 
+/* Création table dishes */
+
 CREATE TABLE Dishes (
     IdDishes INT PRIMARY KEY AUTO-INCREMENT,
     Name VARCHAR (100) NOT NULL,
     Price INT,
     Category VARCHAR(100) NOT NULL
 );
+
+/* Création table orders */
 
 CREATE TABLE Orders (
     IdOrders INT PRIMARY KEY AUTO_INCREMENT,
@@ -28,9 +36,22 @@ CREATE TABLE Orders (
     Customer_Name VARCHAR(100) NOT NULL
 );
 
+/* Création table orderitems */
+
 CREATE TABLE OrderItems (
     IdOrderItems INT PRIMARY KEY AUTO_INCREMENT,
     FOREIGN KEY (IdOrders) REFERENCES Orders(IdOrders),
     FOREIGN KEY (IdDishes) REFERENCES Dishes(IdDishes),
     Quantity INT NOT NULL
 );
+
+/* Ajouts et modifications de colonnes */
+
+ALTER TABLE Employees
+ADD hire_date DATE;
+
+ALTER TABLE Dishes
+ADD is_vegan BOOLEAN NULL;
+
+SELECT Orders AS CustomerOrders
+FROM `Orders`
