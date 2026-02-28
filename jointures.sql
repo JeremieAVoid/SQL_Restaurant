@@ -22,3 +22,13 @@ JOIN CustomerOrders co
 JOIN Restaurants r 
     ON co.IdRestaurant = r.IdRestaurant
 ORDER BY co.Customer_name;
+
+/*leste restau + nmb employés*/
+SELECT 
+    r.Name,
+    COUNT(e.IdEmployees) AS Number_of_employees
+FROM Restaurants r
+LEFT JOIN Employees e 
+    ON r.IdRestaurant = e.IdRestaurant
+GROUP BY r.Name
+ORDER BY Number_of_employees DESC;
