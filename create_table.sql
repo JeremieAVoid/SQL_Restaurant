@@ -1,7 +1,7 @@
 /* Création table restaurants */
 
 CREATE TABLE Restaurants (
-    IdRestaurant INT PRIMARY KEY AUTO_INCREMENT,
+    IdRestaurant INT PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR(100) NOT NULL,
     Planet VARCHAR(100) NOT NULL,
     Opening_year INT
@@ -10,7 +10,7 @@ CREATE TABLE Restaurants (
 /* Création table employees */
 
 CREATE TABLE Employees (
-    IdEmployees INT PRIMARY KEY AUTO_INCREMENT,
+    IdEmployees INT PRIMARY KEY AUTOINCREMENT,
     FirstName VARCHAR(100) NOT NULL,
     LastName VARCHAR(100) NOT NULL,
     Role VARCHAR(100) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE Employees (
 /* Création table dishes */
 
 CREATE TABLE Dishes (
-    IdDishes INT PRIMARY KEY AUTO-INCREMENT,
+    IdDishes INT PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR (100) NOT NULL,
     Price INT,
     Category VARCHAR(100) NOT NULL
@@ -30,7 +30,7 @@ CREATE TABLE Dishes (
 /* Création table orders */
 
 CREATE TABLE Orders (
-    IdOrders INT PRIMARY KEY AUTO_INCREMENT,
+    IdOrders INT PRIMARY KEY AUTOINCREMENT,
     FOREIGN KEY (IdRestaurant) REFERENCES Restaurants(IdRestaurant),
     Total_amount INT NOT NULL,
     Customer_Name VARCHAR(100) NOT NULL
@@ -39,7 +39,7 @@ CREATE TABLE Orders (
 /* Création table orderitems */
 
 CREATE TABLE OrderItems (
-    IdOrderItems INT PRIMARY KEY AUTO_INCREMENT,
+    IdOrderItems INT PRIMARY KEY AUTOINCREMENT,
     FOREIGN KEY (IdOrders) REFERENCES Orders(IdOrders),
     FOREIGN KEY (IdDishes) REFERENCES Dishes(IdDishes),
     Quantity INT NOT NULL
