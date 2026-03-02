@@ -1,48 +1,48 @@
 /* Création table restaurants */
 
 CREATE TABLE Restaurants (
-    IdRestaurant INT PRIMARY KEY AUTOINCREMENT,
+    IdRestaurant INTEGER PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR(100) NOT NULL,
     Planet VARCHAR(100) NOT NULL,
-    Opening_year INT
+    Opening_year INTEGER
 );
 
 /* Création table employees */
 
 CREATE TABLE Employees (
-    IdEmployees INT PRIMARY KEY AUTOINCREMENT,
+    IdEmployees INTEGER PRIMARY KEY AUTOINCREMENT,
     FirstName VARCHAR(100) NOT NULL,
     LastName VARCHAR(100) NOT NULL,
     Role VARCHAR(100) NOT NULL,
-    IdRestaurant INT,
+    IdRestaurant INTEGER,
     FOREIGN KEY (IdRestaurant) REFERENCES Restaurants(IdRestaurant)
 );
 
 /* Création table dishes */
 
 CREATE TABLE Dishes (
-    IdDishes INT PRIMARY KEY AUTOINCREMENT,
+    IdDishes INTEGER PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR (100) NOT NULL,
-    Price INT,
+    Price INTEGER,
     Category VARCHAR(100) NOT NULL
 );
 
 /* Création table orders */
 
 CREATE TABLE Orders (
-    IdOrders INT PRIMARY KEY AUTOINCREMENT,
+    IdOrders INTEGER PRIMARY KEY AUTOINCREMENT,
     FOREIGN KEY (IdRestaurant) REFERENCES Restaurants(IdRestaurant),
-    Total_amount INT NOT NULL,
+    Total_amount INTEGER NOT NULL,
     Customer_Name VARCHAR(100) NOT NULL
 );
 
 /* Création table orderitems */
 
 CREATE TABLE OrderItems (
-    IdOrderItems INT PRIMARY KEY AUTOINCREMENT,
+    IdOrderItems INTEGER PRIMARY KEY AUTOINCREMENT,
     FOREIGN KEY (IdOrders) REFERENCES Orders(IdOrders),
     FOREIGN KEY (IdDishes) REFERENCES Dishes(IdDishes),
-    Quantity INT NOT NULL
+    Quantity INTEGER NOT NULL
 );
 
 /* Ajouts et modifications de colonnes */
