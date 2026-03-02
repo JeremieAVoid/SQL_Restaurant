@@ -55,3 +55,4 @@ ADD is_vegan BOOLEAN NULL;
 
 SELECT Orders AS CustomerOrders
 FROM `Orders`
+
